@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Ask.Models.ApplicationUser>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Approval)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @if (!item.Approval)
+            {
+                <button type="button" class="btn btn-xs btn-primary" onclick="fet('@item.Id');">Approve</button>
+            }
+            else
+            {
+               @Html.DisplayName("Approved")
+            }
+        </td>
+    </tr>
+    }
+
+</table>
+
+@section scripts
+{
+    <script>
+        function fet(xxid) {
+            debugger;
+            $.ajax({
+                url: "/Admin/Users/EditApproval",
+                data: { id: xxid },
+                success: function (res) {
+                    location.reload();
+                }
+            });
+        }
+    </script>
+}

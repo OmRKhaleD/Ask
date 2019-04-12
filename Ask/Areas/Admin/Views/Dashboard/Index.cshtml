@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h3>Dashboard</h3>
+</div>
+
+<div class="row">
+    <div class="col-lg-3 col-md-6 col-12">
+        <div class="card card-sm-3">
+            <div class="card-icon bg-primary">
+                <i class=""></i>
+            </div>
+            <div class="card-wrap">
+                <div class="card-header">
+                    <h4>Total Users</h4>
+                </div>
+                <div class="card-body">
+                    @ViewBag.allUsers
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-12">
+        <div class="card card-sm-3">
+            <div class="card-icon bg-warning">
+                <i class=""></i>
+            </div>
+            <div class="card-wrap">
+                <div class="card-header">
+                    <h4>Pending Users</h4>
+                </div>
+                <div class="card-body">
+                    @ViewBag.pendingUsers
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-12">
+        <div class="card card-sm-3">
+            <div class="card-icon bg-success">
+                <i class=""></i>
+            </div>
+            <div class="card-wrap">
+                <div class="card-header">
+                    <h4>Total Ads</h4>
+                </div>
+                <div class="card-body">
+                    10
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-12">
+        <div class="card card-sm-3 bg-light">
+            <div class="card-icon bg-info">
+                <i class=""></i>
+            </div>
+            <div class="card-wrap">
+                <div class="card-header">
+                    <h4>Pending Ads</h4>
+                </div>
+                <div class="card-body">
+                   5
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
